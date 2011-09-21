@@ -40,10 +40,23 @@ class DatabaseLogger {
 	* Write the log to database
 	*/
 	function write($type, $message){
-		$this->Log->save(array(
-			'type' => $type,
-			'message' => $message
-		));
+		$data = array();
+		
+		if(is_array($message)) {
+			if(is_object($message[0])) {
+				$obj = $message[0];
+				$data['class'] = $obj->name;
+				$data['action'] = $obj->action;
+				$data['data'] = print_r($obj->data,true);
+				$data['user_id'] = $obj->Auth->User('id');
+				$data['message'] = $message[1];
+			}
+		} else {
+			$data['type'] = $type;
+			$data['message'] = $message;
+		}
+		
+		$this->Log->save($data);
 	}
 }
 ?>
