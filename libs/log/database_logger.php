@@ -41,20 +41,16 @@ class DatabaseLogger {
 	*/
 	function write($type, $message){
 		$data = array();
+		$bt = debug_backtrace();
 		
-		if(is_array($message)) {
-			if(is_object($message[0])) {
-				$obj = $message[0];
-				$data['class'] = $obj->name;
-				$data['action'] = $obj->action;
-				$data['data'] = print_r($obj->data,true);
-				$data['user_id'] = $obj->Auth->User('id');
-				$data['message'] = $message[1];
-			}
-		} else {
-			$data['type'] = $type;
-			$data['message'] = $message;
-		}
+		$data['class'] = $bt[2]['object']->name;
+		$data['action'] = $bt[2]['object']->action;
+		$data['data'] = print_r($bt[2]['object']->data,true);
+		$data['user_id'] = $bt[2]['object']->Auth->User('id');
+		$data['file'] = $bt[2]['file'];
+		$data['line'] = $bt[2]['line'];
+		$data['type'] = $type;
+		$data['message'] = $message;
 		
 		$this->Log->save($data);
 	}
