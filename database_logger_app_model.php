@@ -1,4 +1,5 @@
 <?php
+
 class DatabaseLoggerAppModel extends AppModel {
 	var $recursive = -1;
 	/**
