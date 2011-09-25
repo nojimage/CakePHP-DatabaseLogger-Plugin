@@ -40,4 +40,3 @@ class DatabaseLoggerAppModel extends AppModel {
 		return $retval;
 	}
 }
-?>

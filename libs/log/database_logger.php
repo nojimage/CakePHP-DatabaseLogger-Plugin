@@ -43,12 +43,12 @@ class DatabaseLogger {
 		$data = array();
 		$bt = debug_backtrace();
 		
-		$data['class'] = $bt[2]['object']->name;
-		$data['action'] = $bt[2]['object']->action;
-		$data['data'] = print_r($bt[2]['object']->data,true);
-		$data['user_id'] = $bt[2]['object']->Auth->User('id');
-		$data['file'] = $bt[2]['file'];
-		$data['line'] = $bt[2]['line'];
+		if (!empty($bt[2]['object']->name)) { $data['class'] = $bt[2]['object']->name; }
+		if (!empty($bt[2]['object']->action)) { $data['action'] = $bt[2]['object']->action; }
+		if (!empty($bt[2]['object']->data)) { $data['data'] = print_r($bt[2]['object']->data,true); }
+		if (!empty($bt[2]['object']->Auth)) { $data['user_id'] = $bt[2]['object']->Auth->User('id'); }
+		if (!empty($bt[2]['file'])) { $data['file'] = $bt[2]['file']; }
+		if (!empty($bt[2]['line'])) { $data['line'] = $bt[2]['line']; }
 		$data['type'] = $type;
 		$data['message'] = $message;
 		
