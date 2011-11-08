@@ -12,20 +12,20 @@ class database_loggerSchema extends CakeSchema {
 
 	var $logs = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
-		'user_id' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 36, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'type' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'class' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'action' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'data' => array('type' => 'text', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'ip' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'httpcode' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'hostname' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 50, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'uri' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'refer' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
-		'message' => array('type' => 'text', 'null' => false, 'default' => NULL, 'collate' => 'utf8mb4_general_ci', 'charset' => 'utf8mb4'),
+		'user_id' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'type' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'class' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'action' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'data' => array('type' => 'text', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'ip' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'httpcode' => array('type' => 'string', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'hostname' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'uri' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'refer' => array('type' => 'string', 'null' => true, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'message' => array('type' => 'text', 'null' => false, 'default' => NULL, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
-		'tableParameters' => array('charset' => 'utf8mb4', 'collate' => 'utf8mb4_general_ci', 'engine' => 'InnoDB')
+		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
 }
 ?>
